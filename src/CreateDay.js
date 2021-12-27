@@ -25,7 +25,7 @@ export default function CreateDay() {
   }
   function removeDay() {
     if (window.confirm("삭제하시겠습니까?")) {
-      fetch(`http://localhost:3001/days/${days.id}`, {
+      fetch(`http://localhost:3001/days/${days.length}`, {
         method: "DELETE",
       }).then((res) => {
         if (res.ok) {
@@ -35,7 +35,7 @@ export default function CreateDay() {
     }
   }
   if (days.id === 0) {
-    return null;
+    history("/");
   }
   return (
     <div>
